@@ -7,7 +7,7 @@ CREATE TABLE `empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `funcionario`(
-	`id` bifint(20) NOT NULL,
+	`id` bigint(20) NOT NULL,
 	`cpf` varchar(255) NOT NULL,
 	`data_atualizacao` datetime NOT NULL,
 	`data_criacao` datetime NOT NULL,
@@ -18,29 +18,29 @@ CREATE TABLE `funcionario`(
 	`qtd_horas_trabalho_dia` float DEFAULT NULL,
 	`senha` varchar(255) NOT NULL,
 	`valor_hora` decimal(19,2) DEFAULT NULL,
-	`empresa_id` bigint(20) DEFAULT NULL,
+	`empresa_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `lancamento`(
-	`id` bifint(20) NOT NULL,
+	`id` bigint(20) NOT NULL,
 	`data` datetime NOT NULL,
 	`data_atualizacao` datetime NOT NULL,
 	`data_criacao` datetime NOT NULL,
 	`descricao` varchar(255) DEFAULT NULL,
 	`localizacao` varchar(255) DEFAULT NULL,
 	`tipo` varchar(255) NOT NULL,
-	`funcionario_id` bigint(20) DEFAULT NULL,
+	`funcionario_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `empresa`
 ADD PRIMARY KEY(`id`);
 
 ALTER TABLE `funcionario`
-ADD PRIMARY KEY(`id`)
+ADD PRIMARY KEY(`id`), 
 ADD KEY `funcionario_keyid` (`empresa_id`);
 
 ALTER TABLE `lancamento`
-ADD PRIMARY KEY(`id`)
+ADD PRIMARY KEY(`id`), 
 ADD KEY `lancamento_keyid` (`funcionario_id`);
 
 
