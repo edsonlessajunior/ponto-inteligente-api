@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ponto-inteligente
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: edson
+Implementation-Vendor-Id: br.unisul.pontointeligente
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ponto-inteligente
+Created-By: Maven Integration for Eclipse
+
